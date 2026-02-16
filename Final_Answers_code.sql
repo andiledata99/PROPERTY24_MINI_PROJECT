@@ -18,7 +18,7 @@ WHERE PROVINCE= 'Gauteng';
 ---QUESTION 5--Show properties priced under R1,500,000.
 SELECT*
 FROM Data_property24
-WHERE PROPERTY_PRICE>1500000;
+WHERE PROPERTY_PRICE<1500000;
 
 ---QUESTION 6-- List properties with more than 3 bedrooms.
 SELECT*
@@ -97,9 +97,12 @@ FROM Data_property24
 ORDER  BY (PROPERTY_PRICE) ASC;
 
 ---QUESTION 20-- What minimum income is typically required for properties priced above R4,000,000?
-SELECT TOP 1 Min_Gross_Monthly_Income 
-FROM Data_property24
-WHERE PROPERTY_PRICE>4000000;
+SELECT TOP 1
+        Min_Gross_Monthly_Income,
+        PROPERTY_PRICE
+  FROM Data_property24
+  WHERE PROPERTY_PRICE > 4000000
+  ORDER BY Min_Gross_Monthly_Income ASC;
 
 
 
